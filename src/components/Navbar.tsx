@@ -43,7 +43,8 @@ const Navbar: React.FC = () => {
 
     const navLinkClass = (id: string) => {
         const isActive = (location.pathname === '/' && activeSection === id) ||
-            (location.hash === `#${id}`);
+            (location.hash === `#${id}`) ||
+            (id === 'projects' && location.pathname === '/projects');
         return `hover:text-brand-primary transition-all uppercase tracking-tight duration-300 ${isActive ? 'text-brand-primary font-bold' : ''}`;
     };
 
@@ -69,7 +70,7 @@ const Navbar: React.FC = () => {
                 <div className="hidden md:flex space-x-6 lg:space-x-12 text-[10px] lg:text-[12px] font-medium text-brand-secondary">
                     <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className={navLinkClass('about')}>About Me</a>
                     {/* <a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-brand-primary transition-colors uppercase tracking-tight">Portfolio</a> */}
-                    <a href="/#projects" onClick={(e) => handleNavClick(e, 'projects')} className={navLinkClass('projects')}>Projects</a>
+                    <Link to="/projects" className={navLinkClass('projects')}>Projects</Link>
                     <Link to="/contact" className={`hover:text-brand-primary transition-all uppercase tracking-tight duration-300 ${location.pathname === '/contact' ? 'text-brand-primary font-bold' : ''}`}>Contact</Link>
                 </div>
             </div>

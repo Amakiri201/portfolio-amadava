@@ -1,4 +1,6 @@
 import React from 'react';
+import Amakiri from "@/assets/amakiri.avif";
+
 
 const About: React.FC = () => {
     return (
@@ -24,7 +26,7 @@ const About: React.FC = () => {
                         <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest opacity-30 leading-tight">Increase in user<br />engagement rate</div>
                     </div>
                     <div className="aspect-square grayscale rounded-3xl overflow-hidden shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Detail" />
+                        <img src={Amakiri} className="w-full h-full object-cover" alt="Detail" loading="lazy" decoding="async" />
                     </div>
                     <div className="aspect-[4/5] col-span-2 grayscale rounded-3xl overflow-hidden mt-4 shadow-xl">
                         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Detail 2" />

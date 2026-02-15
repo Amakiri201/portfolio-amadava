@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 const Portfolio: React.FC = () => {
@@ -20,12 +21,14 @@ const Portfolio: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 lg:gap-y-16">
                 {projects.slice(0, 3).map((project) => (
-                    <div key={project.id} className="group cursor-pointer">
+                    <Link to={`/project/${project.id}`} key={project.id} className="group cursor-pointer">
                         {/* Project Image Container */}
                         <div className="relative aspect-[16/11] bg-white rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden mb-6 shadow-sm border border-black/5">
                             <img
                                 src={project.image}
                                 alt={project.title}
+                                loading="lazy"
+                                decoding="async"
                                 onError={(e) => {
                                     (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000&auto=format&fit=crop`;
                                 }}
@@ -64,7 +67,7 @@ const Portfolio: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
@@ -73,9 +76,9 @@ const Portfolio: React.FC = () => {
                 <div className="flex items-center gap-4 group cursor-pointer transition-all hover:gap-6">
                     <span className="text-[13px] font-medium text-black/40 uppercase tracking-tight">Check out More</span>
                     <div className="w-8 h-[1px] bg-black/20"></div>
-                    <a href="#" className="text-[14px] lg:text-[16px] font-bold text-[#222222] flex items-center gap-2 uppercase tracking-tight">
+                    <Link to="/projects" className="text-[14px] lg:text-[16px] font-bold text-[#222222] flex items-center gap-2 uppercase tracking-tight">
                         View More
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

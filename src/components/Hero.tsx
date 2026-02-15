@@ -46,6 +46,7 @@ const Hero: React.FC = () => {
                     <img
                         src={Amakiri}
                         alt="D.Nova Portrait"
+                        decoding="async"
                         className="w-[60%] h-[full] object-cover grayscale brightness-[1.05]"
                     />
                 </div>
