@@ -119,7 +119,7 @@ const ProjectDetail: React.FC = () => {
                     <span className="transform transition-transform group-hover:-translate-x-2">←</span> Back home
                 </button>
                 <div className="text-[10px] uppercase tracking-[0.2em] opacity-30">
-                    © 2024 Amakiri David Lucky
+                    © 2026 Amakiri David Lucky
                 </div>
             </section>
         </div>

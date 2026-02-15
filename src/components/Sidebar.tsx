@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
             </div>
             <div className="fixed left-6 bottom-16 z-40 hidden lg:block">
                 <div className="rotate-[-90deg] origin-center whitespace-nowrap text-[10px] font-medium text-brand-secondary tracking-widest uppercase">
-                    2024
+                    2026
                 </div>
             </div>
         </>

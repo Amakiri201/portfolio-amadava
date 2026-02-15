@@ -4,9 +4,9 @@ import Amakiri from "@/assets/amakiri.png";
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative flex flex-col lg:flex-row min-h-screen pt-[7rem] overflow-hidden">
+        <section className="relative flex flex-col lg:flex-row lg:min-h-screen lg:pt-[7rem] overflow-hidden">
             {/* Content side */}
-            <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 py-12 lg:py-0">
+            <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 lg:py-0">
                 {/* Stats */}
                 <div className="flex space-x-8 lg:space-x-16 mb-12 lg:mb-40">
                     <div>
@@ -41,13 +41,13 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Portrait side */}
-            <div className="flex-1 relative min-h-[60vh]">
+            <div className="flex-1 relative w-full lg:min-h-[60vh]">
                 <div className="lg:absolute inset-0 bg-brand-tertiary">
                     <img
                         src={Amakiri}
                         alt="D.Nova Portrait"
                         decoding="async"
-                        className="w-[60%] h-[full] object-cover grayscale brightness-[1.05]"
+                        className="lg:w-[60%] h-full object-cover grayscale brightness-[1.05]"
                     />
                 </div>
             </div>

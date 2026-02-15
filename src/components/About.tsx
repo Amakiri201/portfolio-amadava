@@ -1,5 +1,5 @@
 import React from 'react';
-import Amakiri from "@/assets/amakiri.avif";
+import Amakiri from "@/assets/amakiri.png";
 
 
 const About: React.FC = () => {

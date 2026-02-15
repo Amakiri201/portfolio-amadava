@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact: React.FC = () => {
     return (
-        <section id="contact" className="bg-[--bg-color] text-white px-6 lg:px-12 py-32 lg:py-48 min-h-screen relative overflow-hidden flex flex-col justify-center">
+        <section id="contact" className="bg-[--bg-color] px-6 lg:px-12 py-32 lg:py-48 min-h-screen relative overflow-hidden flex flex-col justify-center">
             <div className="max-w-4xl mx-auto relative z-10">
                 <h2 className="text-[3.5rem] lg:text-[6rem] text-[--text-primary] font-bold tracking-tighter mb-12 lg:mb-16 leading-[0.9]">
                     Let's Make Magic!
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
 
             {/* Background Decorative Elements */}
             <div className="absolute bottom-12 right-12 text-[10px] uppercase tracking-widest opacity-20 hidden lg:block">
-                © 2024 Amakiri - Frontend Developer
+                © 2026 Amakiri - Frontend Developer
             </div>
         </section>
     );
