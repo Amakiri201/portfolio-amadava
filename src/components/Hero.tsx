@@ -1,0 +1,57 @@
+import React from 'react';
+import Amakiri from "@/assets/amakiri.png";
+
+
+const Hero: React.FC = () => {
+    return (
+        <section className="relative flex flex-col lg:flex-row min-h-screen pt-[7rem] overflow-hidden">
+            {/* Content side */}
+            <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 py-12 lg:py-0">
+                {/* Stats */}
+                <div className="flex space-x-8 lg:space-x-16 mb-12 lg:mb-40">
+                    <div>
+                        <div className="text-4xl lg:text-6xl font-light tracking-tight mb-2">+24</div>
+                        <div className="text-[10px] lg:text-[11px] font-medium text-brand-secondary uppercase tracking-wider">Project completed</div>
+                    </div>
+                    <div>
+                        <div className="text-4xl lg:text-6xl font-light tracking-tight mb-2">+10</div>
+                        <div className="text-[10px] lg:text-[11px] font-medium text-brand-secondary uppercase tracking-wider">Startup raised</div>
+                    </div>
+                </div>
+
+                {/* Headline */}
+                <div className="relative">
+                    <h1 className="text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-[0.8] lg:leading-[0.75] tracking-tighter mb-8 lg:mb-10 -ml-1 lg:-ml-2">
+                        Hello
+                    </h1>
+                    <div className="flex items-center space-x-3 lg:space-x-4 text-brand-secondary">
+                        <div className="w-6 lg:w-8 h-[1px] bg-brand-secondary/40"></div>
+                        <p className="text-[12px] lg:text-[15px] font-medium tracking-tight">
+                            It's Amakiri a frontend developer
+                        </p>
+                    </div>
+                </div>
+
+                {/* Scroll indicator */}
+                <div className="mt-8 lg:mt-auto pb-6 lg:pb-12">
+                    <a href="#works" className="text-[10px] lg:text-[12px] font-medium flex items-center gap-2 hover:text-brand-secondary transition-colors uppercase tracking-widest">
+                        Scroll down <span>↓</span>
+                    </a>
+                </div>
+            </div>
+
+            {/* Portrait side */}
+            <div className="flex-1 relative min-h-[60vh]">
+                <div className="lg:absolute inset-0 bg-brand-tertiary">
+                    <img
+                        src={Amakiri}
+                        alt="D.Nova Portrait"
+                        className="w-[60%] h-[full] object-cover grayscale brightness-[1.05]"
+                    />
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;

@@ -1,0 +1,38 @@
+import React from 'react';
+
+const About: React.FC = () => {
+    return (
+        <section id="about" className="px-6 lg:px-12 py-20 lg:py-32 bg-white border-y border-brand-primary/5">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="lg:col-span-7">
+                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-8 lg:mb-12">About Me</h2>
+                    <p className="text-xl lg:text-2xl text-brand-primary/60 leading-relaxed font-light italic">
+                        "I am a highly skilled Senior Mobile & Frontend Engineer with over 6 years of experience specializing in Angular, React, React Native, Node.js, Next.js, Nest.js and TypeScript."
+                    </p>
+                    <div className="mt-8 lg:mt-12 space-y-6 text-brand-primary/40 text-sm lg:text-base">
+                        <p>Throughout my career, I have successfully led cross-functional teams, provided architectural direction, and contributed to the development of scalable web and mobile applications.</p>
+                        <div className="flex flex-wrap gap-3 pt-6">
+                            {['React', 'Next.js', 'TypeScript', 'Node.js', 'React Native', 'AWS', 'Tailwind'].map(skill => (
+                                <span key={skill} className="px-4 py-1.5 lg:px-5 lg:py-2 border border-brand-primary/10 rounded-full text-[10px] lg:text-xs font-bold tracking-widest uppercase hover:bg-brand-primary hover:text-white transition-all cursor-default">{skill}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div className="aspect-square bg-brand-tertiary rounded-3xl p-6 lg:p-8 flex flex-col justify-end">
+                        <div className="text-3xl lg:text-5xl font-bold mb-2">120%</div>
+                        <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest opacity-30 leading-tight">Increase in user<br />engagement rate</div>
+                    </div>
+                    <div className="aspect-square grayscale rounded-3xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Detail" />
+                    </div>
+                    <div className="aspect-[4/5] col-span-2 grayscale rounded-3xl overflow-hidden mt-4 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Detail 2" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default About;
