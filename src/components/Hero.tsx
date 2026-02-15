@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
                 {/* Scroll indicator */}
                 <div className="mt-8 lg:mt-auto pb-6 lg:pb-12">
-                    <a href="#works" className="text-[10px] lg:text-[12px] font-medium flex items-center gap-2 hover:text-brand-secondary transition-colors uppercase tracking-widest">
+                    <a href="#portfolio" className="text-[10px] lg:text-[12px] font-medium flex items-center gap-2 hover:text-brand-secondary transition-colors uppercase tracking-widest">
                         Scroll down <span>↓</span>
                     </a>
                 </div>

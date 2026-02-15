@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Vision: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="bg-[--text-secondary] text-brand-primary px-6 lg:px-12 py-24 lg:py-32 text-center relative overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -11,9 +14,13 @@ const Vision: React.FC = () => {
                     I'm always excited to collaborate on new and innovative projects. Whether you're starting from scratch or refining an existing idea
                 </p>
                 <div className="flex justify-center">
-                    <a href="#contact" className="text-[14px] lg:text-[16px] font-medium border-b border-brand-primary pb-1 hover:text-brand-secondary hover:border-brand-secondary transition-all flex items-center gap-2 uppercase tracking-tight">
+                    <button
+                        type="button"
+                        onClick={() => navigate('/contact')}
+                        className="text-[14px] lg:text-[16px] font-medium border-b border-brand-primary pb-1 hover:text-brand-secondary hover:border-brand-secondary transition-all flex items-center gap-2 uppercase tracking-tight"
+                    >
                         Book A Call <span className="text-[12px]">↗</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>

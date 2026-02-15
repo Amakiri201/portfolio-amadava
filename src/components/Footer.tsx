@@ -1,6 +1,19 @@
 import React from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+        e.preventDefault();
+        if (location.pathname !== '/') {
+            navigate(`/#${id}`);
+        } else {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <footer className="bg-[--text-primary] text-white px-6 lg:px-16 pt-24 lg:pt-32 pb-12 overflow-hidden relative">
             {/* Background Subtle Grid Pattern */}
@@ -16,11 +29,11 @@ const Footer: React.FC = () => {
 
             <div className="flex flex-col lg:flex-row justify-between items-end gap-12 lg:gap-0 relative z-10">
                 <div className="flex flex-wrap items-center gap-4 lg:gap-8 text-[12px] lg:text-[14px] font-medium text-white/50">
-                    <a href="#" className="px-5 py-2 lg:px-6 lg:py-2.5 bg-white/10 rounded-full text-white backdrop-blur-sm hover:bg-white/20 transition-all">Home</a>
-                    <a href="#about" className="hover:text-white transition-colors uppercase tracking-tight">About Me</a>
-                    <a href="#portfolio" className="hover:text-white transition-colors uppercase tracking-tight">Portfolio</a>
-                    <a href="#projects" className="hover:text-white transition-colors uppercase tracking-tight">Projects</a>
-                    {/* <a href="#blog" className="hover:text-white transition-colors uppercase tracking-tight">Blog</a> */}
+                    <Link to="/" className="px-5 py-2 lg:px-6 lg:py-2.5 bg-white/10 rounded-full text-white backdrop-blur-sm hover:bg-white/20 transition-all">Home</Link>
+                    <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-white transition-colors uppercase tracking-tight">About Me</a>
+                    {/* <a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-white transition-colors uppercase tracking-tight">Portfolio</a> */}
+                    <a href="/#projects" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-white transition-colors uppercase tracking-tight">Projects</a>
+                    <Link to="/contact" className="hover:text-white transition-colors uppercase tracking-tight">Contact</Link>
                 </div>
 
                 <div className="w-full lg:w-auto text-right">

@@ -3,7 +3,8 @@ import { projects } from '../data/projects';
 
 const Portfolio: React.FC = () => {
     return (
-        <section id="portfolio" className="px-6 lg:px-12 py-20 lg:py-32 bg-[#F8F8F8]">
+        <section id="portfolio" className="relative px-6 lg:px-12 py-20 lg:py-32 bg-[#F8F8F8]">
+            <div id="projects" className="absolute -top-20" />
             <div className="flex flex-col items-center mb-16 lg:mb-24">
                 {/* Category Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full border border-black/5 shadow-sm mb-8">
