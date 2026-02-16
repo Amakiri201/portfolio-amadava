@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
                     onClick={() => navigate(ROUTES.CONTACT)}
                     className={`text-[11px] lg:text-[13px] font-medium hover:text-brand-secondary transition-all flex items-center gap-1 uppercase ${location.pathname === ROUTES.CONTACT ? 'text-brand-primary font-bold border-brand-primary' : ''}`}
                 >
-                    Book A Call <span className="text-[10px]"><ArrowUpRight /></span>
+                   Get in touch <span className="text-[10px]"><ArrowUpRight /></span>
                 </Button>
             </div>
         </nav>

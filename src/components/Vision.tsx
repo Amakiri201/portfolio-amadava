@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ScrollReveal from './ui/ScrollReveal';
 import { ROUTES } from '@/routes';
+import { ArrowUpRight } from 'lucide-react';
 
 const Vision: React.FC = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Vision: React.FC = () => {
                             onClick={() => navigate(ROUTES.CONTACT)}
                             className="text-[14px] lg:text-[16px] font-medium border-b border-brand-primary pb-1 hover:text-[--text-primary] hover:border-[--text-primary] transition-all flex items-center gap-2 uppercase tracking-tight"
                         >
-                            Book A Call <span className="text-[12px]">↗</span>
+                            Get in touch <span className="text-[12px]"><ArrowUpRight /></span>
                         </button>
                     </div>
                 </ScrollReveal>
