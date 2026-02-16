@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
                         <textarea
                             id="message"
                             rows={1}
-                            className="w-full bg-transparent border-b border-black py-4 focus:outline-none focus:border-[--text-primary] transition-all text-xl lg:text-2xl placeholder:text-white/5 resize-none overflow-hidden"
+                            className="w-full max-h-[250px] bg-transparent border-b border-black py-4 focus:outline-none focus:border-[--text-primary] transition-all text-xl lg:text-2xl placeholder:text-white/5 resize-none overflow-hidden"
                             placeholder="Tell me about your project"
                             onChange={(e) => {
                                 e.target.style.height = 'auto';

@@ -68,9 +68,9 @@ const Navbar: React.FC = () => {
                     </svg>
                 </div>
                 <div className="hidden md:flex space-x-6 lg:space-x-12 text-[10px] lg:text-[12px] font-medium text-brand-secondary">
-                    <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className={navLinkClass('about')}>About Me</a>
-                    {/* <a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-brand-primary transition-colors uppercase tracking-tight">Portfolio</a> */}
-                    <Link to="/projects" className={navLinkClass('projects')}>Projects</Link>
+                    <a href="/#hero" onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-brand-primary transition-colors uppercase tracking-tight">Home</a>
+                    <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} >ABOUT ME</a>
+                    <Link to="/projects" className={navLinkClass('projects')}>PROJECTS</Link>
                     <Link to="/contact" className={`hover:text-brand-primary transition-all uppercase tracking-tight duration-300 ${location.pathname === '/contact' ? 'text-brand-primary font-bold' : ''}`}>Contact</Link>
                 </div>
             </div>

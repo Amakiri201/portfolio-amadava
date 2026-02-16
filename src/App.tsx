@@ -7,6 +7,7 @@ const Home = React.lazy(() => import('./pages/Home'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
 const Contact = React.lazy(() => import('./components/Contact'));
+const Uses = React.lazy(() => import('./components/uses'));
 
 const Layout = () => {
   return (
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/uses",
+        element: <Uses />,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import Amakiri from "@/assets/amakiri.png";
+import { Link } from 'react-router-dom';
 
 
 const About: React.FC = () => {
@@ -9,12 +10,12 @@ const About: React.FC = () => {
                 <div className="lg:col-span-7">
                     <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-8 lg:mb-12">About Me</h2>
                     <p className="text-xl lg:text-2xl text-brand-primary/60 leading-relaxed font-light italic">
-                        "I am a highly skilled Senior Mobile & Frontend Engineer with over 6 years of experience specializing in Angular, React, React Native, Node.js, Next.js, Nest.js and TypeScript."
+                        "I'm a React Developer based in Lagos, Nigeria, My expertise lies in React.js and Next.js, with a growing proficiency in Vue.js and Nuxt.js. Being comfortable with code allows me to rapidly prototype and validate user experiences. If you're curious about the tools and software I use, check out my <Link to="/uses" className="text-brand-primary hover:text-brand-secondary border-b border-brand-primary transition-colors">uses page</Link>."
                     </p>
                     <div className="mt-8 lg:mt-12 space-y-6 text-brand-primary/40 text-sm lg:text-base">
                         <p>Throughout my career, I have successfully led cross-functional teams, provided architectural direction, and contributed to the development of scalable web and mobile applications.</p>
                         <div className="flex flex-wrap gap-3 pt-6">
-                            {['React', 'Next.js', 'TypeScript', 'Node.js', 'React Native', 'AWS', 'Tailwind'].map(skill => (
+                            {['React', 'Next.js', 'TypeScript', 'Vue.js', 'React Native', 'Tailwind'].map(skill => (
                                 <span key={skill} className="px-4 py-1.5 lg:px-5 lg:py-2 border border-brand-primary/10 rounded-full text-[10px] lg:text-xs font-bold tracking-widest uppercase hover:bg-brand-primary hover:text-white transition-all cursor-default">{skill}</span>
                             ))}
                         </div>

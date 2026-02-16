@@ -19,7 +19,7 @@ const Portfolio: React.FC = () => {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 lg:gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 lg:gap-y-16 lg:px-12">
                 {projects.slice(0, 3).map((project) => (
                     <Link to={`/project/${project.id}`} key={project.id} className="group cursor-pointer">
                         {/* Project Image Container */}
@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => {
                             {/* Bottom Meta Overlay */}
                             <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                 <span className="text-white text-[10px] font-medium uppercase tracking-widest">{project.category}</span>
-                                <span className="text-white text-[10px] font-medium uppercase tracking-widest">{project.id}.io</span>
+                                <span className="text-white text-[10px] font-medium uppercase tracking-widest">{project.id}</span>
                             </div>
                         </div>
 

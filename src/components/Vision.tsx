@@ -17,7 +17,7 @@ const Vision: React.FC = () => {
                     <button
                         type="button"
                         onClick={() => navigate('/contact')}
-                        className="text-[14px] lg:text-[16px] font-medium border-b border-brand-primary pb-1 hover:text-brand-secondary hover:border-brand-secondary transition-all flex items-center gap-2 uppercase tracking-tight"
+                        className="text-[14px] lg:text-[16px] font-medium border-b border-brand-primary pb-1 hover:text-[--text-primary] hover:border-[--text-primary] transition-all flex items-center gap-2 uppercase tracking-tight"
                     >
                         Book A Call <span className="text-[12px]">↗</span>
                     </button>

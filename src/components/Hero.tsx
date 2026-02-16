@@ -4,7 +4,7 @@ import Amakiri from "@/assets/amakiri.png";
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative flex flex-col lg:flex-row lg:min-h-screen lg:pt-[7rem] overflow-hidden">
+        <section id="hero" className="relative flex flex-col lg:flex-row lg:min-h-screen lg:pt-[7rem] overflow-hidden">
             {/* Content side */}
             <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 lg:py-0">
                 {/* Stats */}

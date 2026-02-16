@@ -49,9 +49,9 @@ const Footer: React.FC = () => {
             <div className="mt-20 lg:mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] lg:text-[10px] uppercase tracking-widest text-white/20 relative z-10">
                 <p>© 2026 AMADAVA - ALL RIGHTS RESERVED</p>
                 <div className="flex gap-8 mt-4 md:mt-0">
-                    <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-white transition-colors">GitHub</a>
-                    <a href="#" className="hover:text-white transition-colors">Dribbble</a>
+                    <a href="https://www.linkedin.com/in/david-amakiri-872850295/" className="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="https://github.com/Amakiri201" className="hover:text-white transition-colors">GitHub</a>
+                    <a href="https://www.instagram.com/_davemak/" className="hover:text-white transition-colors">Instagram</a>
                 </div>
             </div>
         </footer>
