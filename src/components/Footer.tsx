@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
 
                 <div className="w-full lg:w-auto text-right">
                     <a
-                        href="mailto:hello@amadava.com"
+                        href="mailto:davemak1998@gmail.com"
                         className="text-[2.2rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] font-bold tracking-tighter leading-none hover:opacity-70 transition-opacity block -mb-2 lg:-mb-4 whitespace-nowrap"
                     >
-                        hello@amadava.com
+                        davemak1998@gmail.com
                     </a>
                 </div>
             </div>
