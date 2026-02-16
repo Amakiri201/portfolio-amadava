@@ -35,15 +35,17 @@ const ProjectDetail: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
 
                 {/* BACK BUTTON FOR MOBILE AND DESKTOP */}
-                <div className="">
-                    <Button
-                        onClick={() => navigate(ROUTES.PROJECTS)}
-                        variant="ghost"
-                        size="icon"
-                        className="absolute top-[100px] left-[20px] lg:left-[150px] z-10 w-14 h-14 rounded-full bg-white text-black font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-2 md:gap-3 whitespace-nowrap"
-                    >
-                        <MoveLeft size={24} />
-                    </Button>
+                <section >
+                    <div className="lg:hidden">
+                        <Button
+                            onClick={() => navigate(ROUTES.PROJECTS)}
+                            variant="ghost"
+                            size="icon"
+                            className="absolute top-[100px] left-[20px] lg:left-[150px] z-10 w-14 h-14 rounded-full bg-white text-black font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-2 md:gap-3 whitespace-nowrap"
+                        >
+                            <MoveLeft size={24} />
+                        </Button>
+                    </div>
 
                     <div className="hidden lg:block">
                         <Button
@@ -55,7 +57,7 @@ const ProjectDetail: React.FC = () => {
                             <MoveLeft size={24} />
                         </Button>
                     </div>
-                </div>
+                </section>
 
                 <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 lg:p-16 lg:px-[120px] z-10">
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-8">
