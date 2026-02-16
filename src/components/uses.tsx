@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Uses: React.FC = () => {
     const navigate = useNavigate();
@@ -57,12 +58,13 @@ const Uses: React.FC = () => {
             <div className="max-w-3xl mx-auto px-6 lg:px-0 py-32 lg:py-48 flex flex-col items-center">
                 {/* Back button */}
                 <div className="w-full mb-12 flex justify-start">
-                    <button
+                    <Button
+                        variant="ghost"
                         onClick={() => navigate(-1)}
-                        className="text-[10px] uppercase tracking-widest text-[--text-primary] hover:text-[--text-secondary] transition-colors"
+                        className="text-[15px] uppercase tracking-widest text-[--text-primary] hover:text-[--text-secondary] transition-colors p-0 h-auto hover:bg-transparent"
                     >
                         ← Back
-                    </button>
+                    </Button>
                 </div>
 
                 <div className="w-full">
@@ -82,7 +84,7 @@ const Uses: React.FC = () => {
                                         </svg>
                                     </span>
                                     <p className="text-base lg:text-lg leading-relaxed font-light">
-                                        I use <a href={tool.link} target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:border-b hover:border-[--text-primary] transition-colors font-medium">{tool.name}</a> {tool.description}
+                                        I use <Button variant="link" onClick={() => window.open(tool.link, "_blank")} className="p-0 px-2 w-fit-content h-0 text-[--text-primary] transition-colors font-medium">{tool.name}</Button> {tool.description}
                                     </p>
                                 </li>
                             ))}

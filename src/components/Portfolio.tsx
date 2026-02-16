@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
 
 const Portfolio: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <section id="portfolio" className="relative px-6 lg:px-12 py-20 lg:py-32 bg-[#F8F8F8]">
             <div id="projects" className="absolute -top-20" />
             <div className="flex flex-col items-center mb-16 lg:mb-24">
                 {/* Category Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full border border-black/5 shadow-sm mb-8">
-                    <div className="w-2 h-2 rounded-full bg-black"></div>
+                    <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse shadow-[0_0_10px_rgba(34,34,34,0.8)]"></div>
                     <span className="text-[11px] font-medium tracking-tight uppercase">Portfolio</span>
                 </div>
 
@@ -21,9 +23,14 @@ const Portfolio: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 lg:gap-y-16 lg:px-12">
                 {projects.slice(0, 3).map((project) => (
-                    <Link to={`/project/${project.id}`} key={project.id} className="group cursor-pointer">
+                    <Button
+                        key={project.id}
+                        variant="ghost"
+                        onClick={() => navigate(`/project/${project.id}`)}
+                        className="group cursor-pointer flex flex-col h-auto p-0 hover:bg-transparent w-full"
+                    >
                         {/* Project Image Container */}
-                        <div className="relative aspect-[16/11] bg-white rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden mb-6 shadow-sm border border-black/5">
+                        <div className="relative aspect-[16/11] bg-white rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden mb-6 shadow-sm border border-black/5 w-full">
                             <img
                                 src={project.image}
                                 alt={project.title}
@@ -52,7 +59,7 @@ const Portfolio: React.FC = () => {
                         </div>
 
                         {/* Project Info Below Image */}
-                        <div className="flex justify-between items-center px-2">
+                        <div className="flex justify-between items-center px-2 w-full">
                             <h3 className="text-lg lg:text-xl font-bold tracking-tight text-[#222222]">
                                 {project.title}
                             </h3>
@@ -67,7 +74,7 @@ const Portfolio: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </Link>
+                    </Button>
                 ))}
             </div>
 
@@ -76,9 +83,13 @@ const Portfolio: React.FC = () => {
                 <div className="flex items-center gap-4 group cursor-pointer transition-all hover:gap-6">
                     <span className="text-[13px] font-medium text-black/40 uppercase tracking-tight">Check out More</span>
                     <div className="w-8 h-[1px] bg-black/20"></div>
-                    <Link to="/projects" className="text-[14px] lg:text-[16px] font-bold text-[#222222] flex items-center gap-2 uppercase tracking-tight">
+                    <Button
+                        variant="link"
+                        onClick={() => navigate('/projects')}
+                        className="text-[14px] lg:text-[16px] font-bold text-[#222222] flex items-center gap-2 uppercase tracking-tight p-0 h-auto hover:no-underline"
+                    >
                         View More
-                    </Link>
+                    </Button>
                 </div>
             </div>
         </section>

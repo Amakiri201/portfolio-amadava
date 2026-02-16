@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@/components/ui/button';
 
 const Contact: React.FC = () => {
     return (
@@ -42,9 +43,9 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="pt-8">
-                        <button
+                        <Button
                             type="submit"
-                            className="group relative inline-flex items-center gap-4 bg-[--text-primary] text-black px-8 py-4 lg:px-10 lg:py-5 font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+                            className="group relative inline-flex items-center gap-4 bg-[--text-primary] text-black px-8 py-4 lg:px-10 lg:py-5 font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] h-auto rounded-none hover:bg-[--text-primary]"
                         >
                             <span className="relative z-10 flex text-white items-center gap-3">
                                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -53,7 +54,7 @@ const Contact: React.FC = () => {
                                 Send message
                             </span>
                             <div className="absolute top-0 right-0 w-4 h-4 bg-black/10 translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-                        </button>
+                        </Button>
                     </div>
                 </form>
             </div>

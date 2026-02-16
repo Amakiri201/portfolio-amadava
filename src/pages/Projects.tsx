@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
 
 const Projects: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-brand-tertiary text-black pt-48 flex flex-col items-center">
             {/* Header */}
             <header className="px-6 lg:px-16 mb-20 text-center flex flex-col items-center max-w-6xl w-full">
-                <div className="flex flex-col items-center mb-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 rounded-full border border-white/5 shadow-sm mb-6 w-fit">
+                <div className="flex flex-col items-center mb-8 border-none">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 rounded-full mb-6 w-fit">
                         <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse shadow-[0_0_10px_rgba(34,34,34,0.8)]"></div>
-                        <span className="text-[10px] font-bold tracking-widest uppercase text-white/60">Case Studies</span>
                     </div>
                     <h1 className="text-6xl lg:text-[8rem] font-bold tracking-tighter leading-[0.8] mb-8">
                         Selected <br /> <span className="text-brand-primary">Projects</span>
@@ -43,19 +44,22 @@ const Projects: React.FC = () => {
                                         {project.description}
                                     </p>
                                     <div className="pt-4">
-                                        <Link
-                                            to={`/project/${project.id}`}
-                                            className="inline-flex items-center gap-4 px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-widest text-[12px] hover:bg-white hover:text-black transition-all group"
+                                        <Button
+                                            onClick={() => navigate(`/project/${project.id}`)}
+                                            className="inline-flex items-center gap-4 px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-widest text-[12px] hover:bg-white hover:text-black transition-all group h-auto rounded-none"
                                         >
                                             View Project
                                             <span className="text-lg transform transition-transform group-hover:translate-x-2">↗</span>
-                                        </Link>
+                                        </Button>
                                     </div>
                                 </div>
 
                                 {/* Image Side */}
                                 <div className="w-full lg:w-[45%] group">
-                                    <Link to={`/project/${project.id}`} className="block relative aspect-[16/10] overflow-hidden rounded-2xl lg:rounded-3xl border border-white/5 bg-white/5">
+                                    <Button
+                                        onClick={() => navigate(`/project/${project.id}`)}
+                                        className="block relative aspect-[16/10] overflow-hidden rounded-2xl lg:rounded-3xl border border-white/5 bg-white/5 p-0 h-auto hover:bg-transparent w-full"
+                                    >
                                         <img
                                             src={project.image}
                                             alt={project.title}
@@ -65,7 +69,7 @@ const Projects: React.FC = () => {
                                             }}
                                         />
                                         <div className="absolute inset-0 bg-brand-tertiary/20 group-hover:bg-transparent transition-colors duration-500" />
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                         </section>
@@ -78,12 +82,13 @@ const Projects: React.FC = () => {
                 <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter mb-8 text-center max-w-2xl">
                     Have a project in mind? Let's build something extraordinary.
                 </h2>
-                <Link
-                    to="/contact"
-                    className="text-xl lg:text-2xl font-bold border-b-2 border-brand-primary pb-2 hover:text-brand-primary transition-colors text-white"
+                <Button
+                    variant="link"
+                    onClick={() => navigate('/contact')}
+                    className="text-xl lg:text-2xl font-bold border-b-2 border-brand-primary pb-2 hover:text-brand-primary transition-colors text-white hover:no-underline rounded-none h-auto p-0"
                 >
                     Get in touch
-                </Link>
+                </Button>
             </footer>
         </div>
     );

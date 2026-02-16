@@ -1,16 +1,18 @@
 import React from 'react';
 import Amakiri from "@/assets/amakiri.png";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 
 const About: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <section id="about" className="px-6 lg:px-12 py-20 lg:py-32 bg-white border-y border-brand-primary/5">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7">
                     <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-8 lg:mb-12">About Me</h2>
                     <p className="text-xl lg:text-2xl text-brand-primary/60 leading-relaxed font-light italic">
-                        "I'm a React Developer based in Lagos, Nigeria, My expertise lies in React.js and Next.js, with a growing proficiency in Vue.js and Nuxt.js. Being comfortable with code allows me to rapidly prototype and validate user experiences. If you're curious about the tools and software I use, check out my <Link to="/uses" className="text-brand-primary hover:text-brand-secondary border-b border-brand-primary transition-colors">uses page</Link>."
+                        "I'm a React Developer based in Lagos, Nigeria, My expertise lies in React.js and Next.js, with a growing proficiency in Vue.js and Nuxt.js. Being comfortable with code allows me to rapidly prototype and validate user experiences. If you're curious about the tools and software I use, check out my <Button variant="link" onClick={() => navigate('/uses')} className="text-brand-primary hover:text-brand-secondary rounded-none border-b border-brand-primary transition-colors p-0 h-auto font-light italic text-xl lg:text-2xl hover:no-underline">uses page</Button>."
                     </p>
                     <div className="mt-8 lg:mt-12 space-y-6 text-brand-primary/40 text-sm lg:text-base">
                         <p>Throughout my career, I have successfully led cross-functional teams, provided architectural direction, and contributed to the development of scalable web and mobile applications.</p>
