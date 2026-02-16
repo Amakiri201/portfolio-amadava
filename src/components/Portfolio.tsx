@@ -4,6 +4,7 @@ import { projects } from '../data/projects';
 import PulsingDot from './ui/PulsingDot';
 import { motion } from 'framer-motion';
 import { ROUTES } from '@/routes';
+import { ArrowUpRight } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
     const navigate = useNavigate();
@@ -54,9 +55,7 @@ const Portfolio: React.FC = () => {
                                 {/* Overlay with Arrow Icon */}
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                     <div className="w-14 h-14 lg:w-16 lg:h-16 bg-[#222222] text-white rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-500 shadow-xl">
-                                        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current stroke-2">
-                                            <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
+                                        <ArrowUpRight />
                                     </div>
                                 </div>
 

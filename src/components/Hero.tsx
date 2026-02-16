@@ -7,10 +7,10 @@ const Hero: React.FC = () => {
     return (
         <section id="hero" className="relative flex flex-col lg:flex-row lg:min-h-screen lg:pt-[7rem] overflow-hidden">
             {/* Content side */}
-            <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 lg:py-0">
+            <div className="flex-1 px-6 lg:px-12 lg:pl-40 flex flex-col justify-center relative z-10 lg:py-0 lg:pt-[100px]">
                 {/* Stats */}
                 <ScrollReveal delay={0.2}>
-                    <div className="flex space-x-8 lg:space-x-16 mb-12 lg:mb-40">
+                    <div className="flex space-x-8 lg:space-x-16 mt-20 lg:mt-0 mb-12 lg:mb-40">
                         <div>
                             <div className="text-4xl lg:text-6xl font-light tracking-tight mb-2">+24</div>
                             <div className="text-[10px] lg:text-[11px] font-medium text-brand-secondary uppercase tracking-wider">Project completed</div>

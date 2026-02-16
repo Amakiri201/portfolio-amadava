@@ -114,7 +114,7 @@ const Uses: React.FC = () => {
                     </section>
 
                     <footer className="w-full flex justify-center pb-20">
-                        <div className="text-[10px] uppercase tracking-[0.2em] opacity-30 text-[--text-primary]">
+                        <div className="text-[10px] uppercase tracking-[0.2em] text-[--text-primary]">
                             © 2026 Amakiri David Lucky
                         </div>
                     </footer>

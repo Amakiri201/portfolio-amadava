@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
 import { ROUTES } from '@/routes';
+import { ArrowUpRight } from 'lucide-react';
 
 const Projects: React.FC = () => {
     const navigate = useNavigate();
@@ -50,7 +51,7 @@ const Projects: React.FC = () => {
                                             className="inline-flex items-center gap-4 px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-widest text-[12px] hover:bg-white hover:text-black transition-all group h-auto rounded-none"
                                         >
                                             View Project
-                                            <span className="text-lg transform transition-transform group-hover:translate-x-2">↗</span>
+                                            <span className="text-lg transform transition-transform group-hover:translate-x-2"><ArrowUpRight /></span>
                                         </Button>
                                     </div>
                                 </div>
