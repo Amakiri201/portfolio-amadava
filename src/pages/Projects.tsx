@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
                                     <h2 className="text-4xl lg:text-7xl font-bold tracking-tighter leading-tight">
                                         {project.title}
                                     </h2>
-                                    <p className="text-lg lg:text-xl text-white/50 font-medium leading-relaxed">
+                                    <p className="text-lg lg:text-xl text-[--text-primary] font-medium leading-relaxed">
                                         {project.description}
                                     </p>
                                     <div className="pt-4">
