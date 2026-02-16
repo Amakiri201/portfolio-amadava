@@ -1,8 +1,10 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import LoadingRipple from './components/ui/LoadingRipple';
 const Home = React.lazy(() => import('./pages/Home'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
@@ -16,9 +18,19 @@ const Layout = () => {
       <Navbar />
       <Sidebar />
       <main className="flex-1">
-        <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-          <Outlet />
-        </React.Suspense>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={useLocation().pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <React.Suspense fallback={<LoadingRipple />}>
+              <Outlet />
+            </React.Suspense>
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
     </div>
