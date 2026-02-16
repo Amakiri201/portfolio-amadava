@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ROUTES } from '@/routes';
 
 const Footer: React.FC = () => {
     const navigate = useNavigate();
@@ -8,8 +9,8 @@ const Footer: React.FC = () => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
-        if (location.pathname !== '/') {
-            navigate(`/#${id}`);
+        if (location.pathname !== ROUTES.HOME) {
+            navigate(`${ROUTES.HOME}#${id}`);
         } else {
             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
         }
@@ -31,23 +32,23 @@ const Footer: React.FC = () => {
             <div className="flex flex-col lg:flex-row justify-between items-end gap-12 lg:gap-0 relative z-10">
                 <div className="flex flex-wrap items-center gap-4 lg:gap-8 text-[12px] lg:text-[14px] font-medium text-white/50">
                     <Button
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate(ROUTES.HOME)}
                         className="px-5 py-2 lg:px-6 lg:py-2.5 bg-white/10 rounded-full text-white backdrop-blur-sm hover:bg-white/20 transition-all h-auto font-medium text-[12px] lg:text-[14px]"
                     >
                         Home
                     </Button>
-                    <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-white transition-colors uppercase tracking-tight cursor-pointer">About Me</a>
-                    {/* <a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-white transition-colors uppercase tracking-tight">Portfolio</a> */}
+                    <a href={`${ROUTES.HOME}#about`} onClick={(e) => handleNavClick(e, 'about')} className="hover:text-white transition-colors uppercase tracking-tight cursor-pointer">About Me</a>
+                    {/* <a href={`${ROUTES.HOME}#portfolio`} onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-white transition-colors uppercase tracking-tight">Portfolio</a> */}
                     <Button
                         variant="link"
-                        onClick={() => navigate('/projects')}
+                        onClick={() => navigate(ROUTES.PROJECTS)}
                         className="hover:text-white transition-colors uppercase tracking-tight text-white/50 p-0 h-auto font-medium text-[12px] lg:text-[14px] hover:no-underline"
                     >
                         Projects
                     </Button>
                     <Button
                         variant="link"
-                        onClick={() => navigate('/contact')}
+                        onClick={() => navigate(ROUTES.CONTACT)}
                         className="hover:text-white transition-colors uppercase tracking-tight text-white/50 p-0 h-auto font-medium text-[12px] lg:text-[14px] hover:no-underline"
                     >
                         Contact

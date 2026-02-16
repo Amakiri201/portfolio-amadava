@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
 import PulsingDot from './ui/PulsingDot';
 import { motion } from 'framer-motion';
+import { ROUTES } from '@/routes';
 
 const Portfolio: React.FC = () => {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Portfolio: React.FC = () => {
                     >
                         <Button
                             variant="ghost"
-                            onClick={() => navigate(`/project/${project.id}`)}
+                            onClick={() => navigate(ROUTES.PROJECT_DETAIL.replace(':id', project.id))}
                             className="group cursor-pointer flex flex-col h-auto p-0 hover:bg-transparent w-full"
                         >
                             {/* Project Image Container */}
@@ -94,7 +95,7 @@ const Portfolio: React.FC = () => {
                     <div className="w-8 h-[1px] bg-black/20"></div>
                     <Button
                         variant="link"
-                        onClick={() => navigate('/projects')}
+                        onClick={() => navigate(ROUTES.PROJECTS)}
                         className="text-[14px] lg:text-[16px] font-bold text-[#222222] flex items-center gap-2 uppercase tracking-tight p-0 h-auto hover:no-underline"
                     >
                         View More

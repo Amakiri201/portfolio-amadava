@@ -27,6 +27,16 @@ const Uses: React.FC = () => {
             description: "provides beautifully designed components built with Radix UI and Tailwind CSS. It offers accessible, customizable components that maintain code ownership."
         },
         {
+            name: "Framer Motion",
+            link: "https://www.framer.com/motion/",
+            description: "is a production-ready motion library for React that powers the animations."
+        },
+        {
+            name: "Lucide React",
+            link: "https://lucide.dev",
+            description: "is a beautiful & consistent icon library that provides the icons."
+        },
+        {
             name: "TypeScript",
             link: "https://www.typescriptlang.org",
             description: "adds syntax for types to JavaScript, enabling better editor tooling and error checking."
@@ -84,7 +94,7 @@ const Uses: React.FC = () => {
                                         </svg>
                                     </span>
                                     <p className="text-base lg:text-lg leading-relaxed font-light">
-                                        I use <Button variant="link" onClick={() => window.open(tool.link, "_blank")} className="p-0 px-2 w-fit-content h-0 text-[--text-primary] transition-colors font-medium">{tool.name}</Button> {tool.description}
+                                        I use <Button variant="link" onClick={() => window.open(tool.link, "_blank")} className="p-0 px-2 w-fit-content h-0 text-[--text-primary] font-bold transition-colors">{tool.name}</Button> {tool.description}
                                     </p>
                                 </li>
                             ))}

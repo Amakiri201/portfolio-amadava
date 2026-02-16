@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ROUTES } from '@/routes';
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
@@ -35,17 +36,17 @@ const Navbar: React.FC = () => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
-        if (location.pathname !== '/') {
-            navigate(`/#${id}`);
+        if (location.pathname !== ROUTES.HOME) {
+            navigate(`${ROUTES.HOME}#${id}`);
         } else {
             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     const navLinkClass = (id: string) => {
-        const isActive = (location.pathname === '/' && activeSection === id) ||
+        const isActive = (location.pathname === ROUTES.HOME && activeSection === id) ||
             (location.hash === `#${id}`) ||
-            (id === 'projects' && location.pathname === '/projects');
+            (id === 'projects' && location.pathname === ROUTES.PROJECTS);
         return `hover:text-brand-primary transition-all uppercase tracking-tight duration-300 ${isActive ? 'text-brand-primary font-bold' : ''}`;
     };
 
@@ -55,8 +56,8 @@ const Navbar: React.FC = () => {
                 <div
                     className="flex items-center space-x-2 cursor-pointer"
                     onClick={() => {
-                        if (location.pathname !== '/') {
-                            navigate('/');
+                        if (location.pathname !== ROUTES.HOME) {
+                            navigate(ROUTES.HOME);
                         } else {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
@@ -69,19 +70,19 @@ const Navbar: React.FC = () => {
                     </svg>
                 </div>
                 <div className="hidden md:flex space-x-6 lg:space-x-12 text-[10px] lg:text-[12px] font-medium text-brand-secondary">
-                    <a href="/#hero" onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-brand-primary transition-colors uppercase tracking-tight">Home</a>
-                    <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} >ABOUT ME</a>
+                    <a href={`${ROUTES.HOME}#hero`} onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-brand-primary transition-colors uppercase tracking-tight">Home</a>
+                    <a href={`${ROUTES.HOME}#about`} onClick={(e) => handleNavClick(e, 'about')} >ABOUT ME</a>
                     <Button
                         variant="link"
-                        onClick={() => navigate('/projects')}
+                        onClick={() => navigate(ROUTES.PROJECTS)}
                         className={navLinkClass('projects') + " p-0 h-auto hover:no-underline"}
                     >
                         PROJECTS
                     </Button>
                     <Button
                         variant="link"
-                        onClick={() => navigate('/contact')}
-                        className={`hover:text-brand-primary transition-all uppercase tracking-tight duration-300 p-0 h-auto hover:no-underline ${location.pathname === '/contact' ? 'text-brand-primary font-bold' : ''}`}
+                        onClick={() => navigate(ROUTES.CONTACT)}
+                        className={`hover:text-brand-primary transition-all uppercase tracking-tight duration-300 p-0 h-auto hover:no-underline ${location.pathname === ROUTES.CONTACT ? 'text-brand-primary font-bold' : ''}`}
                     >
                         Contact
                     </Button>
@@ -90,8 +91,8 @@ const Navbar: React.FC = () => {
             <div>
                 <button
                     type="button"
-                    onClick={() => navigate('/contact')}
-                    className={`text-[11px] lg:text-[13px] font-medium border-b border-brand-primary pb-0.5 hover:text-brand-secondary hover:border-brand-secondary transition-all flex items-center gap-1 uppercase ${location.pathname === '/contact' ? 'text-brand-primary font-bold border-brand-primary' : ''}`}
+                    onClick={() => navigate(ROUTES.CONTACT)}
+                    className={`text-[11px] lg:text-[13px] font-medium border-b border-brand-primary pb-0.5 hover:text-brand-secondary hover:border-brand-secondary transition-all flex items-center gap-1 uppercase ${location.pathname === ROUTES.CONTACT ? 'text-brand-primary font-bold border-brand-primary' : ''}`}
                 >
                     Book A Call <span className="text-[10px]">↗</span>
                 </button>

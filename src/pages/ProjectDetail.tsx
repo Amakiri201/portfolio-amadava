@@ -4,6 +4,7 @@ import { projects } from '../data/projects';
 import { ArrowUpRight, MoveLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { ROUTES } from '@/routes';
 
 const ProjectDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -14,7 +15,7 @@ const ProjectDetail: React.FC = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-brand-tertiary text-brand-primary">
                 <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-                <Button onClick={() => navigate('/projects')} className="text-brand-primary border-b border-brand-primary pb-1">Back to Home</Button>
+                <Button onClick={() => navigate(ROUTES.PROJECTS)} className="text-brand-primary border-b border-brand-primary pb-1">Back to Home</Button>
             </div>
         );
     }
@@ -34,7 +35,7 @@ const ProjectDetail: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
 
                 <Button
-                    onClick={() => navigate('/projects')}
+                    onClick={() => navigate(ROUTES.PROJECTS)}
                     variant="ghost"
                     size="icon"
                     className="absolute top-40 left-[20px] lg:left-[150px] z-10 w-20 h-20 rounded-full bg-white text-black font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-2 md:gap-3 whitespace-nowrap"
@@ -123,7 +124,7 @@ const ProjectDetail: React.FC = () => {
             {/* Footer Navigation */}
             <section className="px-6 lg:px-[120px] md:px-10 lg:px-16 py-12 md:py-16 lg:py-20 bg-brand-tertiary text-white flex flex-col md:flex-row justify-between items-center md:items-center gap-6 md:gap-4 border-t border-white/5">
                 <Button
-                    onClick={() => navigate('/projects')}
+                    onClick={() => navigate(ROUTES.PROJECTS)}
                     className="w-full lg:w-auto px-6 py-3 md:px-8 md:py-7 rounded-none bg-white text-black font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-2 md:gap-3 whitespace-nowrap"
                 >
                     <span className="transform transition-transform group-hover:-translate-x-2"><MoveLeft /></span> Back to Projects

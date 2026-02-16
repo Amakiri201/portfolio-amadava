@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
+import { ROUTES } from '@/routes';
 
 const Projects: React.FC = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const Projects: React.FC = () => {
                                     </p>
                                     <div className="pt-4">
                                         <Button
-                                            onClick={() => navigate(`/project/${project.id}`)}
+                                            onClick={() => navigate(ROUTES.PROJECT_DETAIL.replace(':id', project.id))}
                                             className="inline-flex items-center gap-4 px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-widest text-[12px] hover:bg-white hover:text-black transition-all group h-auto rounded-none"
                                         >
                                             View Project
@@ -57,7 +58,7 @@ const Projects: React.FC = () => {
                                 {/* Image Side */}
                                 <div className="w-full lg:w-[45%] group">
                                     <Button
-                                        onClick={() => navigate(`/project/${project.id}`)}
+                                        onClick={() => navigate(ROUTES.PROJECT_DETAIL.replace(':id', project.id))}
                                         className="block relative aspect-[16/10] overflow-hidden rounded-2xl lg:rounded-3xl border border-white/5 bg-white/5 p-0 h-auto hover:bg-transparent w-full"
                                     >
                                         <img
@@ -84,7 +85,7 @@ const Projects: React.FC = () => {
                 </h2>
                 <Button
                     variant="link"
-                    onClick={() => navigate('/contact')}
+                    onClick={() => navigate(ROUTES.CONTACT)}
                     className="text-xl lg:text-2xl font-bold border-b-2 border-brand-primary pb-2 hover:text-brand-primary transition-colors text-white hover:no-underline rounded-none h-auto p-0"
                 >
                     Get in touch
