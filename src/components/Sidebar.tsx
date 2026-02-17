@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeToggle from './ui/ThemeToggle';
 
 const Sidebar: React.FC = () => {
     return (
@@ -8,9 +9,12 @@ const Sidebar: React.FC = () => {
                     Frontend Developer
                 </div>
             </div>
-            <div className="fixed left-6 bottom-16 z-40 hidden lg:block">
+            <div className="fixed left-6 bottom-16 z-40 hidden lg:flex flex-col items-center gap-8">
                 <div className="rotate-[-90deg] origin-center whitespace-nowrap text-[10px] font-medium text-brand-secondary tracking-widest uppercase">
                     2026
+                </div>
+                <div className="-rotate-90 origin-center">
+                    <ThemeToggle />
                 </div>
             </div>
         </>
