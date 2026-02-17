@@ -11,33 +11,32 @@ interface FullScreenMenuProps {
 
 const menuVariants = {
     closed: {
-        opacity: 0,
         y: "-100%",
         transition: {
             duration: 0.5,
             ease: [0.76, 0, 0.24, 1] as const,
-            staggerChildren: 0.1,
+            when: "afterChildren",
+            staggerChildren: 0.05,
             staggerDirection: -1
         }
     },
     open: {
-        opacity: 1,
         y: 0,
         transition: {
             duration: 0.5,
             ease: [0.76, 0, 0.24, 1] as const,
             staggerChildren: 0.1,
-            delayChildren: 0.3
+            delayChildren: 0.2
         }
     }
 };
 
 const linkVariants = {
     closed: {
-        y: 80,
+        y: -20,
         opacity: 0,
         transition: {
-            duration: 0.5,
+            duration: 0.3,
             ease: [0.76, 0, 0.24, 1] as const
         }
     },
@@ -55,7 +54,7 @@ const fadeInVariants = {
     closed: {
         opacity: 0,
         transition: {
-            duration: 0.5,
+            duration: 0.3,
             ease: "linear" as const
         }
     },
@@ -64,7 +63,7 @@ const fadeInVariants = {
         transition: {
             duration: 0.5,
             ease: "linear" as const,
-            delay: 0.6
+            delay: 0.4
         }
     }
 };
