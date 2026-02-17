@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                 </h2>
 
                 <div className="w-full h-[5px] bg-white/5 mb-16 relative">
-                    <div className="absolute top-0 left-0 w-32 h-full bg-[--text-primary] shadow-[0_0_20px_rgba(0,245,255,0.5)]"></div>
+                    <div className="absolute top-0 left-0 w-32 h-full bg-[--text-primary] shadow-[--text-secondary] shadow-[0_0_20px_rgba(0,245,255,0.5)]"></div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-12 lg:space-y-16 max-w-2xl">
