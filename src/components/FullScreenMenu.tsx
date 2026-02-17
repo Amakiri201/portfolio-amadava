@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/routes';
 import { Button } from './ui/button';
+import ThemeToggle from './ui/ThemeToggle';
 import Toast from './ui/Toast';
 
 interface FullScreenMenuProps {
@@ -119,7 +120,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
                     animate="open"
                     exit="closed"
                     variants={menuVariants}
-                    className="fixed inset-0 bg-[--bg-color] z-[60] flex flex-col p-6 lg:p-12 text-[--text-primary] overflow-hidden backdrop-blur-md"
+                    className="fixed inset-0 bg-[--bg-color]/95 z-[60] flex flex-col p-6 lg:p-12 text-[--text-primary] overflow-hidden backdrop-blur-md"
                 >
                     {/* Top Right Close Button - Removed, handled by Navbar */}
                     
@@ -179,21 +180,28 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
                                 ))}
                             </div>
 
-                            {/* Contact Info */}
-                            <div className="flex flex-col gap-1 text-sm lg:text-base font-mono text-[--text-primary]">
-                                <Button 
-                                    className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
-                                    onClick={() => handleCopy("davemak1998@gmail.com", "Email copied to clipboard")}
-                                >
-                                    davemak1998@gmail.com
-                                </Button>
-                                <Button 
-                                    className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
-                                    onClick={() => handleCopy("+2349165961298", "Phone number copied to clipboard")}
-                                >
-                                    +234 916 5961 298
-                                </Button>
-                            </div>
+                           <section className='flex flex-row justify-between w-full lg:flex-col gap-4'>
+                             {/* Theme Toggle for Mobile */}
+                                <div className="lg:hidden mt-4">
+                                    <ThemeToggle />
+                                </div>
+                                {/* Contact Info */}
+                                <div className="flex flex-col gap-1 text-sm lg:text-base font-mono text-[--text-primary]">
+                                    <Button 
+                                        className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
+                                        onClick={() => handleCopy("davemak1998@gmail.com", "Email copied to clipboard")}
+                                    >
+                                        davemak1998@gmail.com
+                                    </Button>
+                                    <Button 
+                                        className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
+                                        onClick={() => handleCopy("+2349165961298", "Phone number copied to clipboard")}
+                                    >
+                                        +234 916 5961 298
+                                    </Button>
+                                </div>
+                               
+                           </section>
                         </motion.div>
                     </div>
                 </motion.div>
