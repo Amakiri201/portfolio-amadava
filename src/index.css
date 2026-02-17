@@ -66,6 +66,11 @@ body {
   --border: 0 0% 20%;
   --input: 0 0% 20%;
   --ring: 0 0% 83%;
+  
+  /* Custom Dark Mode Overrides */
+  --bg-color: #0a0a0a;
+  --text-primary: #f8f8f8;
+  --text-secondary: #a1a1aa;
 }
 
 @layer base {
@@ -81,8 +86,20 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.dark .glass {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .text-gradient {
   background: linear-gradient(to right, #000, #4a4a4a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(to right, #f8f8f8, #a1a1aa);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

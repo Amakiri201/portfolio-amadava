@@ -13,11 +13,11 @@ const Navbar: React.FC = () => {
         <>
             <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
             <nav 
-                className={`fixed top-0 z-[70] w-full py-6 lg:py-10 px-6 lg:px-12 flex justify-between items-center transition-colors duration-300 ${isMenuOpen ? 'bg-transparent' : 'bg-brand-tertiary/80 backdrop-blur-md'}`}
+                className={`fixed top-0 z-[70] w-full py-6 lg:py-10 px-6 lg:px-12 flex justify-between items-center transition-colors duration-300 ${isMenuOpen ? 'bg-transparent' : 'bg-[--bg-color]/80 backdrop-blur-md'}`}
             >
                  <div className="flex items-center space-x-8 lg:space-x-20">
                     <div
-                        className={`flex items-center space-x-2 cursor-pointer transition-colors duration-300 ${isMenuOpen ? 'text-[--text-primary]' : 'text-brand-primary'}`}
+                        className="flex items-center space-x-2 cursor-pointer transition-colors duration-300 text-[--text-primary]"
                         onClick={() => {
                             if (location.pathname !== ROUTES.HOME) {
                                 navigate(ROUTES.HOME);
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
                         initial="hide"
                         animate={isMenuOpen ? "show" : "hide"}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`flex flex-col gap-1.5 p-2 rounded-full transition-colors z-[70] relative ${isMenuOpen ? 'text-[--text-primary]' : 'text-brand-primary'}`}
+                        className="flex flex-col gap-1.5 p-2 rounded-full transition-colors z-[70] relative text-[--text-primary]"
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
                         <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>

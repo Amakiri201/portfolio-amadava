@@ -119,7 +119,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
                     animate="open"
                     exit="closed"
                     variants={menuVariants}
-                    className="fixed inset-0 bg-[--bg-color] z-[60] flex flex-col p-6 lg:p-12 text-[--text-primary] overflow-hidden bg-brand-tertiary/80 backdrop-blur-md"
+                    className="fixed inset-0 bg-[--bg-color] z-[60] flex flex-col p-6 lg:p-12 text-[--text-primary] overflow-hidden backdrop-blur-md"
                 >
                     {/* Top Right Close Button - Removed, handled by Navbar */}
                     

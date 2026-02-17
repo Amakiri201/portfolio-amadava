@@ -34,7 +34,7 @@ const RootLayout: React.FC = () => {
     }, [location]);
 
     return (
-        <div className="min-h-screen bg-brand-tertiary text-brand-primary font-sans selection:bg-brand-primary selection:text-white flex flex-col">
+        <div className="min-h-screen bg-[--bg-color] text-[--text-primary] font-sans selection:bg-[--text-primary] selection:text-[--bg-color] flex flex-col">
             <ScrollRestoration />
             <Navbar />
             <Sidebar />

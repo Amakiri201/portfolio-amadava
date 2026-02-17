@@ -8,15 +8,15 @@ import { ArrowUpRight } from 'lucide-react';
 const Projects: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className="min-h-screen bg-brand-tertiary text-black pt-48 flex flex-col items-center">
+        <div className="min-h-screen bg-[--bg-color] text-[--text-primary] pt-48 flex flex-col items-center">
             {/* Header */}
             <header className="px-6 lg:px-16 mb-20 text-center flex flex-col items-center max-w-6xl w-full">
                 <div className="flex flex-col items-center mb-8 border-none">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 rounded-full mb-6 w-fit">
-                        <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse shadow-[0_0_10px_rgba(34,34,34,0.8)]"></div>
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[--text-primary]/5 rounded-full mb-6 w-fit">
+                        <div className="w-2 h-2 rounded-full bg-[--text-primary] animate-pulse shadow-[0_0_10px_rgba(248,248,248,0.8)]"></div>
                     </div>
                     <h1 className="text-6xl lg:text-[8rem] font-bold tracking-tighter leading-[0.8] mb-8">
-                        Selected <br /> <span className="text-brand-primary">Projects</span>
+                        Selected <br /> <span className="text-[--text-primary]">Projects</span>
                     </h1>
                 </div>
             </header>
@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
                     return (
                         <section
                             key={project.id}
-                            className="py-20 lg:py-40 px-6 lg:px-16 border-t border-white/5 flex flex-col items-center overflow-hidden w-full"
+                            className="py-20 lg:py-40 px-6 lg:px-16 border-t border-[--text-primary]/5 flex flex-col items-center overflow-hidden w-full"
                         >
                             <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-12 lg:gap-24 w-full max-w-6xl mx-auto`}>
                                 {/* Text Side */}
@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
                                     <div className="pt-4">
                                         <Button
                                             onClick={() => navigate(ROUTES.PROJECT_DETAIL.replace(':id', project.id))}
-                                            className="inline-flex items-center gap-4 px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-widest text-[12px] hover:bg-white hover:text-black transition-all group h-auto rounded-none"
+                                            className="inline-flex items-center gap-4 px-8 py-4 bg-[--text-primary] text-[--bg-color] font-bold uppercase tracking-widest text-[12px] hover:bg-[--text-secondary] hover:text-[--bg-color] transition-all group h-auto rounded-none"
                                         >
                                             View Project
                                             <span className="text-lg transform transition-transform group-hover:translate-x-2"><ArrowUpRight /></span>
@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
                                 <div className="w-full lg:w-[45%] group">
                                     <Button
                                         onClick={() => navigate(ROUTES.PROJECT_DETAIL.replace(':id', project.id))}
-                                        className="block relative aspect-[16/10] overflow-hidden rounded-2xl lg:rounded-3xl border border-white/5 bg-white/5 p-0 h-auto hover:bg-transparent w-full"
+                                        className="block relative aspect-[16/10] overflow-hidden rounded-2xl lg:rounded-3xl border border-[--text-primary]/5 bg-[--text-primary]/5 p-0 h-auto hover:bg-transparent w-full"
                                     >
                                         <img
                                             src={project.image}
@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
                                                 (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000&auto=format&fit=crop';
                                             }}
                                         />
-                                        <div className="absolute inset-0 bg-brand-tertiary/20 group-hover:bg-transparent transition-colors duration-500" />
+                                        <div className="absolute inset-0 bg-[--bg-color]/20 group-hover:bg-transparent transition-colors duration-500" />
                                     </Button>
                                 </div>
                             </div>
@@ -80,14 +80,14 @@ const Projects: React.FC = () => {
             </div>
 
             {/* Footer Call to Action */}
-            <footer className="px-6 lg:px-16 py-32 flex flex-col items-center justify-center border-t border-white/5 bg-black/20 w-full">
+            <footer className="px-6 lg:px-16 py-32 flex flex-col items-center justify-center border-t border-[--text-primary]/5 bg-[--text-primary]/10 w-full">
                 <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter mb-8 text-center max-w-2xl">
                     Have a project in mind? Let's build something extraordinary.
                 </h2>
                 <Button
                     variant="link"
                     onClick={() => navigate(ROUTES.CONTACT)}
-                    className="text-xl lg:text-2xl font-bold border-b-2 border-brand-primary pb-2 hover:text-brand-primary transition-colors text-white hover:no-underline rounded-none h-auto p-0"
+                    className="text-xl lg:text-2xl font-bold border-b-2 border-[--text-primary] pb-2 hover:text-[--text-secondary] transition-colors text-[--text-primary] hover:no-underline rounded-none h-auto p-0"
                 >
                     Get in touch
                 </Button>
