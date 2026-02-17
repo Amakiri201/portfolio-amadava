@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
                             id="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className={`w-full bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/5 ${errors.email ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
+                            className={`w-full bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/2 ${errors.email ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
                             placeholder="hello@example.com"
                         />
                         {errors.email && (
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
                                 e.target.style.height = 'auto';
                                 e.target.style.height = e.target.scrollHeight + 'px';
                             }}
-                            className={`w-full max-h-[250px] bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/5 resize-none overflow-hidden ${errors.message ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
+                            className={`w-full max-h-[250px] bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/2 resize-none overflow-hidden ${errors.message ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
                             placeholder="Tell me about your project"
                         />
                         {errors.message && (
