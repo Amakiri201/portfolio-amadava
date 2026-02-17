@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/routes';
 import { Button } from './ui/button';
+import Toast from './ui/Toast';
 
 interface FullScreenMenuProps {
     isOpen: boolean;
@@ -72,6 +73,14 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [hoveredLink, setHoveredLink] = React.useState<string | null>(null);
+    const [showToast, setShowToast] = React.useState(false);
+    const [toastMessage, setToastMessage] = React.useState("");
+
+    const handleCopy = (text: string, message: string) => {
+        navigator.clipboard.writeText(text);
+        setToastMessage(message);
+        setShowToast(true);
+    };
 
     const handleNavigation = (path: string, hash?: string) => {
         if (hash) {
@@ -110,7 +119,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
                     animate="open"
                     exit="closed"
                     variants={menuVariants}
-                    className="fixed inset-0 bg-black z-[60] flex flex-col p-6 lg:p-12 text-white overflow-hidden"
+                    className="fixed inset-0 bg-[--bg-color] z-[60] flex flex-col p-6 lg:p-12 text-[--text-primary] overflow-hidden bg-brand-tertiary/80 backdrop-blur-md"
                 >
                     {/* Top Right Close Button - Removed, handled by Navbar */}
                     
@@ -171,14 +180,29 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="flex flex-col gap-1 text-sm lg:text-base font-mono text-gray-400">
-                                <Button className='bg-transparent hover:bg-transparent' onClick={() => window.location.href = "mailto:davemak1998@gmail.com"}>davemak1998@gmail.com</Button>
-                                <Button variant={"default"} className='bg-transparent hover:bg-transparent'>+234 916 5961 298</Button>
+                            <div className="flex flex-col gap-1 text-sm lg:text-base font-mono text-[--text-primary]">
+                                <Button 
+                                    className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
+                                    onClick={() => handleCopy("davemak1998@gmail.com", "Email copied to clipboard")}
+                                >
+                                    davemak1998@gmail.com
+                                </Button>
+                                <Button 
+                                    className='bg-transparent shadow-none hover:bg-transparent text-[--text-primary] justify-end px-0'
+                                    onClick={() => handleCopy("+2349165961298", "Phone number copied to clipboard")}
+                                >
+                                    +234 916 5961 298
+                                </Button>
                             </div>
                         </motion.div>
                     </div>
                 </motion.div>
             )}
+            <Toast 
+                message={toastMessage} 
+                isVisible={showToast} 
+                onClose={() => setShowToast(false)} 
+            />
         </AnimatePresence>
     );
 };

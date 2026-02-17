@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
             >
                  <div className="flex items-center space-x-8 lg:space-x-20">
                     <div
-                        className={`flex items-center space-x-2 cursor-pointer transition-colors duration-300 ${isMenuOpen ? 'text-white' : 'text-brand-primary'}`}
+                        className={`flex items-center space-x-2 cursor-pointer transition-colors duration-300 ${isMenuOpen ? 'text-[--text-primary]' : 'text-brand-primary'}`}
                         onClick={() => {
                             if (location.pathname !== ROUTES.HOME) {
                                 navigate(ROUTES.HOME);
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
                         initial="hide"
                         animate={isMenuOpen ? "show" : "hide"}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`flex flex-col gap-1.5 p-2 rounded-full transition-colors z-[70] relative ${isMenuOpen ? 'text-white' : 'text-brand-primary'}`}
+                        className={`flex flex-col gap-1.5 p-2 rounded-full transition-colors z-[70] relative ${isMenuOpen ? 'text-[--text-primary]' : 'text-brand-primary'}`}
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
                         <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>

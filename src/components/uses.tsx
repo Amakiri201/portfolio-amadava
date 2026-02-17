@@ -50,6 +50,26 @@ const Uses: React.FC = () => {
             name: "ESLint",
             link: "https://eslint.org",
             description: "analyzes the code to find and fix problems, ensuring code quality and consistency."
+        },
+        {
+            name: "Radix UI",
+            link: "https://www.radix-ui.com/",
+            description: "provides the unstyled, accessible components that power the UI primitives."
+        },
+        {
+            name: "PostCSS",
+            link: "https://postcss.org/",
+            description: "is a tool for transforming CSS with JavaScript, used here to process Tailwind CSS."
+        },
+        {
+            name: "Autoprefixer",
+            link: "https://github.com/postcss/autoprefixer",
+            description: "parses CSS and adds vendor prefixes to rules by Can I Use."
+        },
+        {
+            name: "Utils (clsx, tailwind-merge, cva)",
+            link: "https://github.com/lukeed/clsx",
+            description: "are the utility libraries used for constructing and merging class names dynamically."
         }
     ];
 
