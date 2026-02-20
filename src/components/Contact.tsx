@@ -100,13 +100,13 @@ const Contact: React.FC = () => {
                     Let's Make Magic!
                 </h2>
 
-                <div className="w-full h-[5px] bg-white/5 mb-16 relative">
+                <div className="w-full h-[5px] bg-[--text-secondary]/5 mb-16 relative">
                     <div className="absolute top-0 left-0 w-32 h-full bg-[--text-primary] shadow-[--text-secondary] shadow-[0_0_20px_rgba(0,245,255,0.5)]"></div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-12 lg:space-y-16 max-w-2xl">
                     <div className="relative group">
-                        <label htmlFor="email" className={`block text-xs font-medium uppercase tracking-widest mb-4 transition-colors ${errors.email ? 'text-red-500' : 'text-black/40 group-focus-within:text-[--text-primary]'}`}>
+                        <label htmlFor="email" className={`block text-xs font-medium uppercase tracking-widest mb-4 transition-colors ${errors.email ? 'text-red-500' : 'text-[--text-secondary] group-focus-within:text-[--text-primary]'}`}>
                             Your email
                         </label>
                         <input
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
                             id="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className={`w-full bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/2 ${errors.email ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
+                            className={`w-full bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-[--text-secondary]/2 ${errors.email ? 'border-red-500' : 'border-[--text-secondary] focus:border-[--text-primary]'}`}
                             placeholder="hello@example.com"
                         />
                         {errors.email && (
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="relative group">
-                        <label htmlFor="message" className={`block text-xs font-medium uppercase tracking-widest mb-4 transition-colors ${errors.message ? 'text-red-500' : 'text-black/40 group-focus-within:text-[--text-primary]'}`}>
+                        <label htmlFor="message" className={`block text-xs font-medium uppercase tracking-widest mb-4 transition-colors ${errors.message ? 'text-red-500' : 'text-[--text-secondary] group-focus-within:text-[--text-primary]'}`}>
                             Message
                         </label>
                         <textarea
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
                                 e.target.style.height = 'auto';
                                 e.target.style.height = e.target.scrollHeight + 'px';
                             }}
-                            className={`w-full max-h-[250px] bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-black/2 resize-none overflow-hidden ${errors.message ? 'border-red-500' : 'border-black focus:border-[--text-primary]'}`}
+                            className={`w-full max-h-[250px] bg-transparent border-b py-4 focus:outline-none transition-all text-xl lg:text-2xl placeholder:text-[--text-secondary]/2 resize-none overflow-hidden ${errors.message ? 'border-red-500' : 'border-[--text-secondary] focus:border-[--text-primary]'}`}
                             placeholder="Tell me about your project"
                         />
                         {errors.message && (
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                             disabled={status === 'submitting'}
                             className="group relative inline-flex items-center gap-4 bg-[--text-primary] text-black px-8 py-4 lg:px-10 lg:py-5 font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] h-auto rounded-none hover:bg-[--text-primary] disabled:opacity-70 disabled:grayscale disabled:scale-100"
                         >
-                            <span className="relative z-10 flex text-white items-center gap-3">
+                            <span className="relative z-10 flex text-[--text-secondary] items-center gap-3">
                                 {status === 'submitting' ? (
                                     <>
                                         <Loader2 className="w-5 h-5 animate-spin" />
