@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                     >
                         <div className="w-6 lg:w-8 h-[1px] bg-[--text-secondary]/40"></div>
                         <p className="text-[12px] lg:text-[15px] font-medium tracking-tight">
-                            It's Amakiri a frontend developer
+                           It’s Amakiri. A Frontend Developer.
                         </p>
                     </motion.div>
                 </div>
