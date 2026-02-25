@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
                     return (
                         <section
                             key={project.id}
-                            className="py-20 lg:py-40 px-6 lg:px-16 border-t border-[--text-primary]/5 flex flex-col items-center overflow-hidden w-full"
+                            className="py-20 lg:py-40 px-6 lg:px-16ave a project flex flex-col items-center overflow-hidden w-full"
                         >
                             <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-12 lg:gap-24 w-full max-w-6xl mx-auto`}>
                                 {/* Text Side */}
@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
             </div>
 
             {/* Footer Call to Action */}
-            <footer className="px-6 lg:px-16 py-32 flex flex-col items-center justify-center border-t border-[--text-primary]/5 bg-[--text-primary]/10 w-full">
+            <footer className="px-6 lg:px-16 py-32 flex flex-col items-center justify-center bg-[--text-primary]/10 w-full">
                 <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter mb-8 text-center max-w-2xl">
                     Have a project in mind? Let's build something extraordinary.
                 </h2>

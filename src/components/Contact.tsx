@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                             disabled={status === 'submitting'}
                             className="group relative inline-flex items-center gap-4 bg-[--text-primary] text-black px-8 py-4 lg:px-10 lg:py-5 font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] h-auto rounded-none hover:bg-[--text-primary] disabled:opacity-70 disabled:grayscale disabled:scale-100"
                         >
-                            <span className="relative z-10 flex text-[--text-secondary] items-center gap-3">
+                            <span className="relative z-10 flex text-[--bg-color] items-center gap-3">
                                 {status === 'submitting' ? (
                                     <>
                                         <Loader2 className="w-5 h-5 animate-spin" />
