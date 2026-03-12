@@ -31,6 +31,7 @@ const Hero: React.FC = () => {
                         className="text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-[0.8] lg:leading-[0.75] tracking-tighter mb-8 lg:mb-10 -ml-1 lg:-ml-2 text-[--text-primary]"
                     >
                         Hello
+                        <span className="sr-only">, I'm Amakiri, a Frontend Developer and React Expert</span>
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
